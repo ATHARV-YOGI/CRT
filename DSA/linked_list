@@ -1,0 +1,35 @@
+#include <stdio.h>
+#include <stdlib.h>
+struct node{
+
+    int data;
+    struct node *next;
+};
+
+int main()
+{
+    int n = 1;
+    struct node *head, *tail ;
+    head = NULL;
+    while (n)
+    {
+       struct  node *new_node = malloc(sizeof(struct node));
+        printf( "enter data u want to insert:");
+        scanf("%d",new_node->data);
+        new_node->next = NULL;
+        if (head == NULL)
+        {
+            head = new_node;
+            tail = new_node;
+        }
+        else
+        {
+            tail->next = new_node;
+            tail = new_node;
+        }
+        printf("press 1 for continue else 0 ");
+        scanf("%d",&n);
+    }
+
+        return 0;
+    }
