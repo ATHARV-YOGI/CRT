@@ -3,26 +3,26 @@ using namespace std;
 
 void merging(int *arr,int start, int mid, int end){
     int temp[end-start+1];
-    int i,j,k;
+    int i,j,k=0;
 
-    for(i=start,j=mid+1;i<mid;k++){
+    for(i=start,j=mid+1;i<=mid && j<=end;k++){
         if(arr[i]<arr[j]){
-            temp[k]=arr[i];
+            temp[k]=arr[i++];
         }
         else{
-            temp[k]=arr[j];
+            temp[k]=arr[j++];
         }
         
     }
-    while(i<mid){
-        temp[k]=arr[i];
+    while(i<=mid){
+        temp[k++]=arr[i++];
         }
 
-        while(j<end){
-            temp[k]=arr[j];
+        while(j<=end){
+            temp[k++]=arr[j++];
         }
 
-        for(i=0,j=start;i<=end;i++,j++){
+        for(i=0,j=start;j<=end;i++,j++){
             arr[j]=temp[i];
         }
 }
